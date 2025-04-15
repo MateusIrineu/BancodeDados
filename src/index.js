@@ -5,9 +5,14 @@ import CriarTabelas from "./config/criar_tabela.js";
 const input = PromptSync()
 
 async function criarTabela() {
-    await CriarTabelas.turma();
-    await CriarTabelas.aluno();
-    await CriarTabelas.professor();
+    try {
+        await CriarTabelas.turma();
+        await CriarTabelas.aluno();
+        await CriarTabelas.professor();
+        
+    } catch (error) {
+        
+    }
 }
 
 criarTabela();
@@ -26,4 +31,4 @@ criarTabela();
 
 // AlunoView.totalAlunos();
 
-AlunoView.deletarTodos();
+// AlunoView.deletarTodos();
