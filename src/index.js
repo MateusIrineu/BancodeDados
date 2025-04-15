@@ -1,7 +1,16 @@
 import AlunoView from "./modules/aluno/views/index.js";
 import PromptSync from "prompt-sync";
+import CriarTabelas from "./config/criar_tabela.js";
 
 const input = PromptSync()
+
+async function criarTabela() {
+    await CriarTabelas.turma();
+    await CriarTabelas.aluno();
+    await CriarTabelas.professor();
+}
+
+criarTabela();
 
 // const nome = input('Digite o nome do aluno: ');
 // const email = input('Digite o e-mail do aluno: ');
