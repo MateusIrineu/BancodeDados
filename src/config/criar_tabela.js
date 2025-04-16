@@ -18,7 +18,7 @@ class CriarTabelas{
     static async professor(){
         const consulta = `create table if not exists professor(
         nome varchar(100) not null,
-        matricula(100) not null unique,
+        matricula char(5) not null unique,
         cod_turma char(3) references turma(cod_turma)
         )`
         await client.query(consulta);

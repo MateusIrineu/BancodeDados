@@ -1,6 +1,6 @@
-import AlunoView from "./modules/aluno/views/index.js";
+import AlunoView from "./src/modules/aluno/views/index.js";
 import PromptSync from "prompt-sync";
-import CriarTabelas from "./config/criar_tabela.js";
+import CriarTabelas from "./src/config/criar_tabela.js";
 
 const input = PromptSync()
 
@@ -11,7 +11,7 @@ async function criarTabela() {
         await CriarTabelas.professor();
         
     } catch (error) {
-        
+        console.log('Erro ao criar tabelas', error.message);
     }
 }
 
