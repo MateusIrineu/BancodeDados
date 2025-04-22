@@ -31,7 +31,7 @@ class AlunoModel{
 
     static async deletarAluno(email){
         const dados = [email]
-        const consulta = `delete from aluno where email = $1`
+        const consulta = `delete from aluno where email = $1;`
         await client.query(consulta, dados);
     }
 
