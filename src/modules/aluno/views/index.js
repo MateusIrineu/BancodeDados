@@ -30,7 +30,7 @@ class AlunoView{
     }
 
     static async listarPorEmail(){
-        const email = input("Digite o novo e-mail do aluno: ");
+        const email = input("Digite o e-mail do aluno: ");
         const aluno = await AlunoController.listarPorEmail(email);
         console.table(aluno);
     }
@@ -40,7 +40,7 @@ class AlunoView{
     }
 
     static async deletarAluno(){
-        const email = input("Digite o novo e-mail do aluno: ");
+        const email = input("Digite o e-mail do aluno: ");
         const aluno = await AlunoController.deletarAluno(email);
         console.table(aluno);
     }
