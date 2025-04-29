@@ -1,7 +1,8 @@
 import TurmaController from "../controllers/index.js";
 import PromptSync from "prompt-sync";
+import TurmaModel from "../models/index.js";
 
-const input = PromptSync;
+const input = PromptSync();
 
 class TurmaView{
     static async criar(){
@@ -42,6 +43,23 @@ class TurmaView{
         const total = await TurmaController.totalTurmas();
         console.table(total);
     }
+
+    static async listarAlunosPorTurma() {
+        const turma = input(`Informe o Codigo da  Turma: `)
+        const alunos = await TurmaController.listarAlunosPorTurma(turma);
+        console.table(alunos);
+      }
+    
+      static async totalAlunosPorTurma() {
+        const alunos = await TurmaController.totalAlunosPorTurma();
+        console.table(alunos);
+      }
+    
+      static async listarProfessoresPorTurma() {
+        const turma = input(`Informe o Codigo da Turma: `)
+        const professores = await TurmaController.listarProfessoresPorTurma(turma);
+        console.table(professores);
+      }
 }
 
 export default TurmaView;

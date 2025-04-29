@@ -95,6 +95,48 @@ class TurmaController{
             console.log('Erro ao encontrar turmas', error.message);
         }
     }
+
+    static async listarAlunosPorTurma(cod_turma) {
+        try {
+          const alunos = await TurmaModel.listarAlunosPorTurma(cod_turma);
+          if (alunos.length === 0) {
+            return console.error("Não há Alunos Alocados nenhuma Turma");
+          }
+          console.log("Alunos: ");
+    
+          return alunos;
+        } catch (error) {
+          console.log("Erro ao Listar Alunos!", error.message);
+        }
+      }
+    
+      static async totalAlunosPorTurma() {
+        try {
+          const alunos = await TurmaModel.totalALunosPorTurma();
+          if (alunos.length === 0) {
+            return console.error("Não Existe Alunos para serem Contados!");
+          }
+          console.log("Alunos: ");
+    
+          return alunos;
+        } catch (error) {
+          console.log("Erro Ao Contar Alunos!", error.message);
+        }
+      }
+    
+      static async listarProfessoresPorTurma() {
+        try {
+          const professores = await TurmaModel.listarProfessoresPorTurma();
+          if (professores.length === 0) {
+            return console.error("Não há Professores para serem listados!");
+          }
+          console.log("Professores: ");
+    
+          return professores;
+        } catch (error) {
+          console.log("Erro ao Listar Professores!", error.message);
+        }
+      }
 }
 
 export default TurmaController;

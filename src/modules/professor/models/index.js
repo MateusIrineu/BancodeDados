@@ -1,4 +1,4 @@
-import client from "../../../config/database";
+import client from "../../../config/database.js";
 
 class ProfessorModel{
     static async criar(nome, matricula, cod_turma){

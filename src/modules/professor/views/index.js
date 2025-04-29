@@ -1,4 +1,7 @@
 import ProfessorController from "../controllers/index.js";
+import PromptSync from "prompt-sync";
+
+const input = PromptSync();
 
 class ProfessorView{
     static async criar(){

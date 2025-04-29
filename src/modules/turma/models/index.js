@@ -39,6 +39,34 @@ class TurmaModel{
         const resultado = await client.query(consulta);
         return resultado.rows
     }
+
+    static async totalALunosPorTurma(cod_turma) {
+        const dados = [cod_turma];
+        const consulta = `select count(aluno.cod_turma) as total_aluno_turma from turma
+            join aluno on turma.cod_turma = aluno.cod_turma
+            where aluno.cod_turma = $1;`;
+        const resultado = await client.query(consulta, dados);
+        return resultado.rows;
+      }
+    
+      static async listarAlunosPorTurma(cod_turma) {
+        const dados = [cod_turma];
+        const consulta = `select aluno.nome, turma.nome_turma from turma
+            join aluno on turma.cod_turma = aluno.cod_turma;
+            where aluno.cod_turma = $1;`;
+        const resultado = await client.query(consulta, dados);
+        return resultado.rows;
+      }
+    
+      static async listarProfessoresPorturma(cod_turma){
+        const dados = [cod_turma];
+        const consulta = `select count(professor.cod_turma) as total_professor_turma from turma
+            join professor on turma.cod_turma = professor.cod_turma
+            where professor.cod_turma = $1;`;
+        const resultado = await client.query(consulta, dados);
+        return resultado.rows;
+    
+      }
 }
 
 export default TurmaModel;

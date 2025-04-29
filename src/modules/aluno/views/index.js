@@ -1,7 +1,7 @@
 import AlunoController from "../controllers/index.js";
 import PromptSync from "prompt-sync";
 
-const input = PromptSync;
+const input = PromptSync();
 
 class AlunoView{
     static async criar(){
