@@ -32,7 +32,7 @@ async function menu() {
 
     let opcao;
     do {
-        console.clear();
+        
         console.log(opcoes.join("\n"));
         opcao = input("Escolha a opção desejada: ");
 
@@ -73,7 +73,7 @@ async function menuAlunos() {
 
     let opcao;
     do{
-        console.clear();
+        
         console.log(opcoes.join("\n"));
         opcao = input("Escolha a opção desejada: ");
 
@@ -127,7 +127,7 @@ async function menuProfessores() {
 
     let opcao;
     do{
-        console.clear();
+        
         console.log(opcoes.join("\n"));
         opcao = input("Escolha a opção desejada: ");
         
@@ -177,7 +177,7 @@ async function menuTurmas() {
 
     let opcao;
     do {
-        console.clear();
+        
         console.log(opcoes.join("\n"));
         opcao = input("Escolha a opção desejada: ");
 
