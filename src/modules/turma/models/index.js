@@ -26,7 +26,7 @@ class TurmaModel{
         const dados = [cod_turma, nome]
         const consulta = `update turma set nome = $2 where cod_turma = $1 returning *;`
         const resultado = await client.query(consulta, dados);
-        return resultados.rows;
+        return resultado.rows;
     }
 
     static async deletarTodos(){
@@ -40,11 +40,11 @@ class TurmaModel{
         return resultado.rows
     }
 
-    static async totalALunosPorTurma(cod_turma) {
+    static async totalAlunosPorTurma(cod_turma) {
         const dados = [cod_turma];
         const consulta = `select count(aluno.cod_turma) as total_aluno_turma from turma
             join aluno on turma.cod_turma = aluno.cod_turma
-            where aluno.cod_turma = $1;`;
+            where aluno.cod_turma = $1;`
         const resultado = await client.query(consulta, dados);
         return resultado.rows;
       }
